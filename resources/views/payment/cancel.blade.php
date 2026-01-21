@@ -8,6 +8,10 @@
         background-color: #f5f1eb; /* بيج هادئ */
     }
 
+        /* Page spacing under navbar */
+.page-content {
+    margin-top: 2.5rem;
+}
     /* الكرت */
     .card {
         border-radius: 18px;

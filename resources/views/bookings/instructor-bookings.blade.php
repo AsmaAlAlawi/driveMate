@@ -8,6 +8,12 @@
         background-color: #f5f1eb; /* بيج هادئ */
     }
 
+    /* Page spacing under navbar */
+.page-content {
+    margin-top: 2.5rem;
+}
+
+
     h1 {
         color: #7b1e3a; /* عنابي فاخر */
         font-weight: bold;

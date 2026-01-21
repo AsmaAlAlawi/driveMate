@@ -8,6 +8,11 @@
 
 /* ===== Search Page ===== */
 
+/* Page spacing under navbar */
+.page-content {
+    margin-top: 2.5rem;
+}
+
 /* Page title */
 h1 {
     color: #6b1d24;

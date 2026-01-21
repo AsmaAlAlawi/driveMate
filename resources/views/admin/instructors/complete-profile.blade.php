@@ -10,6 +10,11 @@
         background: #F5F1EB;
     }
 
+    /* Page spacing under navbar */
+.page-content {
+    margin-top: 2.5rem;
+}
+
     /* كارد أنيق + زجاجي */
     .instructor-card {
         background: rgba(255,255,255,0.82);

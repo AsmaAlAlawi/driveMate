@@ -12,6 +12,12 @@ body {
     background-color: #f5f1eb; /* بيج هادئ */
 }
 
+/* Page spacing under navbar */
+.page-content {
+    margin-top: 2.5rem;
+}
+
+
 h1, h2, h3, h5 {
     color: #7b1e3a; /* عنابي فخم */
     font-weight: 700;

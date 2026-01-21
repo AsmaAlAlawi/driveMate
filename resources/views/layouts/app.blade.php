@@ -128,6 +128,11 @@
             font-weight: 400;
             letter-spacing: 2px;
         }
+
+        /* Page spacing under navbar */
+.page-content {
+    margin-top: 2.5rem;
+}
         
         /* روابط الـ Navbar */
         .navbar-burgundy .nav-link {
@@ -620,9 +625,7 @@
                         أفضل منصة لحجز مدربي تعليم القيادة في سلطنة عمان. نوفر لك تجربة تعليمية متميزة مع أفضل المدربين.
                     </p>
                     <div class="mt-3">
-                        <a href="#" class="social-icon">
-                            <i class="fab fa-facebook-f"></i>
-                        </a>
+                     
                         <a href="#" class="social-icon">
                             <i class="fab fa-twitter"></i>
                         </a>
@@ -720,9 +723,9 @@
                         </div>
 
                         <button type="submit" class="btn btn-primary btn-lg w-100 mb-3">
-<i class="fas fa-sign-in-alt me-2"></i> دخول
-</button>
-@if (Route::has('password.request'))
+                            <i class="fas fa-sign-in-alt me-2"></i> دخول
+                                    </button>
+                                        @if (Route::has('password.request'))
                         <div class="text-center">
                             <a href="{{ route('password.request') }}" class="text-muted">
                                 <i class="fas fa-question-circle me-1"></i> نسيت كلمة المرور؟

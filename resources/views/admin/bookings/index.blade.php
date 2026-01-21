@@ -16,6 +16,12 @@
         font-family: 'Cairo', sans-serif;
     }
 
+    /* Page spacing under navbar */
+.page-content {
+    margin-top: 2.5rem;
+}
+
+
     /* العناوين */
     .page-title {
         color: var(--burgundy);

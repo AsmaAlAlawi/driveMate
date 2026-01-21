@@ -8,6 +8,12 @@
         background: #F5F1EB;
     }
 
+    /* Page spacing under navbar */
+.page-content {
+    margin-top: 2.5rem;
+}
+
+
     .admin-card {
         background: rgba(255,255,255,0.82);
         backdrop-filter: blur(10px);

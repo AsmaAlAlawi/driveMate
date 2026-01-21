@@ -10,6 +10,8 @@ use App\Http\Controllers\InstructorProfileController;
 use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\InstructorManagementController;
 use App\Http\Controllers\Admin\BookingManagementController;
+use App\Http\Controllers\PageController;
+
 
 // الصفحة الرئيسية
 Route::get('/', [HomeController::class, 'index'])->name('home');
@@ -90,5 +92,10 @@ Route::get('/dashboard', function () {
 Route::middleware('auth')->group(function () {
     // الحجوزات هنا
 });
+
+
+// صفحات ثابتة
+Route::get('/privacy-policy', [PageController::class, 'privacy'])->name('privacy');
+Route::get('/terms-of-service', [PageController::class, 'terms'])->name('terms');
 
 require __DIR__.'/auth.php';

@@ -8,6 +8,12 @@
         background: #F5F1EB;
     }
 
+    /* Page spacing under navbar */
+.page-content {
+    margin-top: 2.5rem;
+}
+
+
     .page-title {
         color: #6D1B2D;
     }

@@ -24,6 +24,10 @@
             color: #6D1B2D;
             font-weight: 700;
         }
+            /* Page spacing under navbar */
+.page-content {
+    margin-top: 2.5rem;
+}
 
         .admin-card {
             background: rgba(255,255,255,0.8);

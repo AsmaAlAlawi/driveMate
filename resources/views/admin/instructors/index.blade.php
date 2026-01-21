@@ -8,6 +8,11 @@
     body {
         background: #F5F1EB;
     }
+    /* Page spacing under navbar */
+.page-content {
+    margin-top: 2.5rem;
+}
+
 
     /* كارد أنيق + زجاجي */
     .admin-card {

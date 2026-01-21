@@ -2,10 +2,14 @@
 
 @section('title', 'جميع المدربين')
 
-
 @push('styles')
 <style>
-    /* ===== Instructors Page ===== */
+/* ===== Instructors Page ===== */
+
+/* Page spacing under navbar */
+.page-content {
+    margin-top: 2.5rem;
+}
 
 /* Page title */
 .page-title h1,
@@ -14,7 +18,7 @@ h1 {
     font-weight: 700;
 }
 
-/* Search button */
+/* Primary button */
 .btn-primary {
     background-color: #6b1d24;
     border-color: #6b1d24;
@@ -53,7 +57,7 @@ h1 {
 
 /* Rating Stars */
 .rating-stars i {
-    color: #d4af37; /* ذهبي هادئ */
+    color: #d4af37;
 }
 
 .rating-stars span {
@@ -116,92 +120,125 @@ h1 {
     color: #f5efe6;
 }
 
+/* Avatar Placeholder (No Image) */
+.avatar-placeholder {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    background-color: #6b1d24; /* عنابي */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
 
+.avatar-placeholder i {
+    color: #f5efe6; /* بيج */
+}
 </style>
 @endpush
 
 @section('content')
-<div class="d-flex justify-content-between align-items-center mb-4">
-<h1 class="mb-0">
-    <i class="fas fa-users me-2"></i> جميع المدربين
-</h1>
-    <a href="{{ route('instructors.search') }}" class="btn btn-primary">
-        <i class="fas fa-filter"></i> بحث متقدم
-    </a>
-</div>
+<div class="page-content">
 
-<div class="row">
-    @forelse($instructors as $instructor)
-        <div class="col-md-6 col-lg-4 mb-4">
-            <div class="card instructor-card h-100">
-                <div class="card-body">
-                    <div class="d-flex align-items-center mb-3">
-                        @if($instructor->photo)
-                            <img src="{{ asset('storage/' . $instructor->photo) }}" 
-                                 class="rounded-circle me-3" 
-                                 style="width: 70px; height: 70px; object-fit: cover;"
-                                 alt="{{ $instructor->full_name }}">
-                        @else
-                            <div class="rounded-circle bg-primary text-white d-flex align-items-center justify-content-center me-3" 
-                                 style="width: 70px; height: 70px;">
-                                <i class="fas fa-user fa-2x"></i>
-                            </div>
-                        @endif
-                        
-                        <div>
-                            <h5 class="mb-1">{{ $instructor->full_name }}</h5>
-                            <small class="text-muted">
-                                <i class="fas fa-map-marker-alt"></i> {{ $instructor->region->name }}
-                            </small>
-                        </div>
-                    </div>
-                    
-                    <div class="rating-stars mb-2">
-                        @for($i = 1; $i <= 5; $i++)
-                            @if($i <= $instructor->average_rating)
-                                <i class="fas fa-star"></i>
+    <!-- Header -->
+    <div class="d-flex justify-content-between align-items-center mb-4">
+        <h1 class="mb-0">
+            <i class="fas fa-users me-2"></i> جميع المدربين
+        </h1>
+        <a href="{{ route('instructors.search') }}" class="btn btn-primary">
+            <i class="fas fa-filter"></i> بحث متقدم
+        </a>
+    </div>
+
+    <!-- Instructors List -->
+    <div class="row">
+        @forelse($instructors as $instructor)
+            <div class="col-md-6 col-lg-4 mb-4">
+                <div class="card instructor-card h-100">
+                    <div class="card-body">
+
+                        <!-- Avatar + Name -->
+                        <div class="d-flex align-items-center mb-3">
+                            @if($instructor->photo)
+                                <img src="{{ asset('storage/' . $instructor->photo) }}"
+                                     class="rounded-circle me-3"
+                                     style="width: 70px; height: 70px; object-fit: cover;"
+                                     alt="{{ $instructor->full_name }}">
                             @else
-                                <i class="far fa-star"></i>
+                                <div class="avatar-placeholder me-3">
+                                    <i class="fas fa-user fa-2x"></i>
+                                </div>
                             @endif
-                        @endfor
-                        <span class="text-muted">({{ $instructor->total_reviews }} تقييم)</span>
-                    </div>
-                    
-                    @if($instructor->bio)
-                        <p class="text-muted small">{{ Str::limit($instructor->bio, 100) }}</p>
-                    @endif
-                    
-                    <div class="d-flex justify-content-between align-items-center mb-3">
-                        <span class="badge bg-info">
-                            <i class="fas fa-calendar-check"></i> {{ $instructor->total_bookings }} حجز
-                        </span>
-                        <span class="badge bg-success">
-                            <i class="fas fa-award"></i> {{ $instructor->years_experience }} سنوات خبرة
-                        </span>
-                    </div>
-                    
-                    <div class="d-flex justify-content-between align-items-center">
-                        <span class="text-primary fw-bold fs-5">
-                            {{ number_format($instructor->hourly_rate, 3) }} ر.ع
-                        </span>
-                        <a href="{{ route('instructors.show', $instructor) }}" class="btn btn-primary">
-                            عرض التفاصيل
-                        </a>
+
+                            <div>
+                                <h5 class="mb-1">{{ $instructor->full_name }}</h5>
+                                <small>
+                                    <i class="fas fa-map-marker-alt"></i>
+                                    {{ $instructor->region->name }}
+                                </small>
+                            </div>
+                        </div>
+
+                        <!-- Rating -->
+                        <div class="rating-stars mb-2">
+                            @for($i = 1; $i <= 5; $i++)
+                                @if($i <= $instructor->average_rating)
+                                    <i class="fas fa-star"></i>
+                                @else
+                                    <i class="far fa-star"></i>
+                                @endif
+                            @endfor
+                            <span class="text-muted">
+                                ({{ $instructor->total_reviews }} تقييم)
+                            </span>
+                        </div>
+
+                        <!-- Bio -->
+                        @if($instructor->bio)
+                            <p class="text-muted small">
+                                {{ Str::limit($instructor->bio, 100) }}
+                            </p>
+                        @endif
+
+                        <!-- Stats -->
+                        <div class="d-flex justify-content-between align-items-center mb-3">
+                            <span class="badge bg-info">
+                                <i class="fas fa-calendar-check"></i>
+                                {{ $instructor->total_bookings }} حجز
+                            </span>
+                            <span class="badge bg-success">
+                                <i class="fas fa-award"></i>
+                                {{ $instructor->years_experience }} سنوات خبرة
+                            </span>
+                        </div>
+
+                        <!-- Price + Button -->
+                        <div class="d-flex justify-content-between align-items-center">
+                            <span class="text-primary fw-bold fs-5">
+                                {{ number_format($instructor->hourly_rate, 3) }} ر.ع
+                            </span>
+                            <a href="{{ route('instructors.show', $instructor) }}" class="btn btn-primary">
+                                عرض التفاصيل
+                            </a>
+                        </div>
+
                     </div>
                 </div>
             </div>
-        </div>
-    @empty
-        <div class="col-12">
-            <div class="alert alert-info text-center">
-                <i class="fas fa-info-circle"></i> لا توجد مدربين متاحين حالياً
+        @empty
+            <div class="col-12">
+                <div class="alert alert-info text-center">
+                    <i class="fas fa-info-circle"></i>
+                    لا توجد مدربين متاحين حالياً
+                </div>
             </div>
-        </div>
-    @endforelse
-</div>
+        @endforelse
+    </div>
 
-<!-- Pagination -->
-<div class="d-flex justify-content-center">
-    {{ $instructors->links() }}
+    <!-- Pagination -->
+    <div class="d-flex justify-content-center">
+        {{ $instructors->links() }}
+    </div>
+
 </div>
 @endsection

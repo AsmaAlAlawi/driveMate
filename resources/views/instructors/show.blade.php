@@ -9,11 +9,18 @@ body {
     background-color: #f5efe6;
 }
 
+
+
 /* ===== Cards ===== */
 .card {
     border: none;
     border-radius: 18px;
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.06);
+}
+
+/* Page spacing under navbar */
+.page-content {
+    margin-top: 2.5rem;
 }
 
 /* ===== Instructor Profile ===== */
