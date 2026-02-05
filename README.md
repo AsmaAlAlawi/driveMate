@@ -1,59 +1,130 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+🚗 Driving Instructor Booking System
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+Laravel | PHP
 
-## About Laravel
+A web-based application that allows trainees to easily book driving instructors based on location, price, and availability, with online payment and post-training ratings.
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+📌 Project Overview
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+This project aims to simplify the process of connecting trainees with certified driving instructors through an intelligent booking platform that provides:
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+Location-based instructor search
 
-## Learning Laravel
+Flexible pricing options
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework. You can also check out [Laravel Learn](https://laravel.com/learn), where you will be guided through building a modern Laravel application.
+Real-time availability
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+Online booking and payment
 
-## Laravel Sponsors
+Instructor rating system after training completion
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+👥 User Roles
+🧑‍🎓 Trainee
 
-### Premium Partners
+Register and log in
 
-- **[Vehikl](https://vehikl.com)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Redberry](https://redberry.international/laravel-development)**
-- **[Active Logic](https://activelogic.com)**
+Select their residential area
 
-## Contributing
+Choose preferred training time
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+View available instructors
 
-## Code of Conduct
+Book training sessions
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+Pay online
 
-## Security Vulnerabilities
+Rate the instructor after completing the session
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+🧑‍🏫 Instructor
 
-## License
+Register as a driving instructor
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+Define working areas
+
+Set available time slots
+
+Set training price
+
+Accept booking requests
+
+View ratings and feedback
+
+🛠️ Admin
+
+Manage trainees and instructors
+
+Approve instructor accounts
+
+Manage bookings
+
+Monitor payments
+
+Moderate ratings and reviews
+
+🛠️ Technologies Used
+
+PHP
+
+Laravel Framework
+
+MySQL
+
+Blade Templating Engine
+
+Bootstrap / Tailwind CSS
+
+JavaScript
+
+Thawani Payment Gateway API
+
+💳 Online Payment
+
+The system integrates Thawani Payment Gateway to allow secure online payments during the booking process.
+
+⭐ Rating System
+
+Trainees can rate instructors after training sessions
+
+Ratings affect instructor visibility and ranking
+
+Reviews are visible to all trainees
+
+✨ Key Features
+
+User-friendly interface
+
+Smart instructor filtering by:
+
+Location
+
+Price
+
+Availability
+
+Instant booking
+
+Secure online payments
+
+Transparent rating system
+
+📋 Requirements
+
+PHP >= 8.0
+
+Composer
+
+MySQL
+
+Laravel >= 10
+
+🚀 Future Enhancements
+
+Mobile application (Flutter / React Native)
+
+Notification system
+
+Real-time chat between trainee and instructor
+
+Monthly subscription plans
+
+Multi-language support
